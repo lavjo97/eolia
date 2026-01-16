@@ -318,9 +318,16 @@ export function BookingForm({
               </div>
             </div>
             
-            <div className="rounded-lg bg-blue-50 p-4 text-sm text-blue-800">
-              <p className="font-medium mb-1">📧 Confirmation envoyée</p>
-              <p>Un email de confirmation vous a été envoyé avec tous les détails.</p>
+            <div className="space-y-3">
+              <div className="rounded-lg bg-blue-50 p-4 text-sm text-blue-800">
+                <p className="font-medium mb-1">📧 Confirmation envoyée</p>
+                <p>Un email de confirmation vous a été envoyé avec tous les détails.</p>
+              </div>
+              
+              <div className="rounded-lg bg-amber-50 p-4 text-sm text-amber-800">
+                <p className="font-medium mb-1">📱 Rappel SMS</p>
+                <p>Vous recevrez un rappel par SMS 24h avant votre rendez-vous.</p>
+              </div>
             </div>
           </CardContent>
         </Card>

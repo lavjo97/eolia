@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Loader2, ExternalLink, Copy } from "lucide-react";
+import { Loader2, ExternalLink, Copy, Bell, Mail, Smartphone, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -246,6 +246,66 @@ export function SettingsForm({ profile, userId }: SettingsFormProps) {
               </Button>
             </form>
           </Form>
+        </CardContent>
+      </Card>
+
+      {/* Notifications */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Bell className="h-5 w-5" />
+            Notifications automatiques
+          </CardTitle>
+          <CardDescription>
+            Vos patients reçoivent automatiquement des notifications
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Email de confirmation */}
+          <div className="flex items-start gap-4 p-4 rounded-lg border bg-green-50 border-green-200">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+              <Mail className="h-5 w-5" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <h4 className="font-medium text-green-900">Email de confirmation</h4>
+                <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+                  <CheckCircle2 className="h-3 w-3" />
+                  Actif
+                </span>
+              </div>
+              <p className="text-sm text-green-700 mt-1">
+                Un email est envoyé automatiquement après chaque prise de rendez-vous avec tous les détails.
+              </p>
+            </div>
+          </div>
+
+          {/* Rappel SMS */}
+          <div className="flex items-start gap-4 p-4 rounded-lg border bg-amber-50 border-amber-200">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+              <Smartphone className="h-5 w-5" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <h4 className="font-medium text-amber-900">Rappel SMS (24h avant)</h4>
+                <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">
+                  <CheckCircle2 className="h-3 w-3" />
+                  Actif
+                </span>
+              </div>
+              <p className="text-sm text-amber-700 mt-1">
+                Un SMS de rappel est envoyé automatiquement 24 heures avant chaque rendez-vous.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
+            <p className="font-medium mb-1">💡 Bon à savoir</p>
+            <p>
+              Les notifications réduisent de 80% les rendez-vous manqués. 
+              Pour activer les SMS, contactez-nous pour configurer votre compte Twilio.
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
